@@ -13,7 +13,8 @@
             "lastname":"Joly"
         },
         {
-            "firstname":"Anthony", "lastname":"Gaillard"
+            "firstname":"Anthony", 
+            "lastname":"Gaillard"
         },
         {
             "firstname":"Davy",
@@ -304,7 +305,8 @@
             "lastname":"Carre"
         },
         {
-            "firstname":"Jordan", "lastname":"Schneider"
+            "firstname":"Jordan", 
+            "lastname":"Schneider"
         },
         {
             "firstname":"Inès", 

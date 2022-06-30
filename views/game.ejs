@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Guess the gender</title>
-    <!-- <link rel="stylesheet" href="game.css"> -->
+    <%- include('./css/style'); %>
     <script type="text/javascript">
     var chooseGender;
     function mascClick(){
@@ -20,10 +20,15 @@
   </script>
 </head>
   <body>
-  <p>Score : <%= score %> </p>
-  <button class="female" onclick="femClick()" name="f" value="fem">GIRL</button> 
-  <button class="male" onclick="mascClick()" name="m" value="masc">BOY</button>
-  <p><%= rows[0].name %></p>
+    <div id="game">
+      <p id="score">Score : <%= score %> </p>
+      <div id="buttons">
+        <button id="left" onclick="femClick()" name="f" value="fem">GIRL</button>
+        <p id="name"><%= rows[0].name %></p>
+        <button onclick="mascClick()" name="m" value="masc">BOY</button>
+      </div>
+      
+    </div>
   <script type="text/javascript"></script>
 </body>
 </html

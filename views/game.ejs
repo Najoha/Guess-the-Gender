@@ -4,14 +4,26 @@
     <meta charset="utf-8">
     <title>Guess the gender</title>
     <!-- <link rel="stylesheet" href="game.css"> -->
-    <!-- <script type="text/javascript" src="../game.js"></script> -->
+    <script type="text/javascript">
+    var chooseGender;
+    function mascClick(){
+      chooseGender = "male";
+      console.log("vous avez choisis Masculin");    
+      return 1;
+    }
+
+    function femClick(){
+      chooseGender = "female";
+      console.log("vous avez choisis Feminin");
+      return 1;
+    }
+  </script>
 </head>
   <body>
   <p>Score : <%= score %> </p>
-  <button class="female" type="button" name="f" value="fem"> <%= femClick() %> </button>
-  <button class="male" type="button" name="m" value="masc"> <%= mascClick() %> </button>
-  <!-- <input onclick="getName()" type="button" value="Start">  -->
+  <button class="female" onclick="femClick()" name="f" value="fem">GIRL</button> 
+  <button class="male" onclick="mascClick()" name="m" value="masc">BOY</button>
   <p><%= rows[0].name %></p>
   <script type="text/javascript"></script>
 </body>
-</html>
+</html

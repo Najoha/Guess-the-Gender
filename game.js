@@ -1,3 +1,6 @@
+import { femClick } from './views/game.ejs';
+import { mascClick } from './views/game.ejs';
+
 var mysql = require('mysql');
 const express = require('express');
 const { response } = require('express');
@@ -34,9 +37,12 @@ function getName(){
         catch(e) {
             console.log('Error:', e);
         }
-
+        
         app.set('view engine', 'ejs');
-
+        app.locals.mascClick = function (){
+            console.log("Vous pensez que ce nom est plutôt masculin");    
+            return 1;
+        }
         app.get('/', (req, res) => {
             res.render('game', {
                 rows,
@@ -46,11 +52,16 @@ function getName(){
         app.listen(port, () => {
         console.log(`App listening at port ${port}`);
         })
+
+        buttonClicked();
     });
-    // buttonClicked();
+    
 
     return response;
 }
+
+
+
 
 // function gameOver(score){
 //     if (score == 20){
@@ -61,49 +72,30 @@ function getName(){
 //     }
 // }
 
-// app.locals.femClick = function (){
-//     console.log("feminin");
-//     return 1;
-// }
+function buttonClicked(){
+    if (femClick() == 1 || mascClick() == 1){
+        newScore(score);
+    }
+    console.log("prout");
+}
 
-// app.locals.mascClick = function (){
-//     console.log("masculin");    
-//     return 1;
-// }
-// function mascClick(){
-//     console.log("masculin");    
-//     return 1;
-// }
-
-// function femClick(){
-//     addEventListener.buttonClicked("").console.log("feminin");
-//     return 1;
-// }
-
-// function buttonClicked(){
-//     if (femClick == 1 || mascClick == 1){
-//         newScore(score);
-//         getName();
-//     }
-// }
-
-// function newScore(score){
-//     var genderChoosed;
-//     if (femClick == 1) {
-//         genderChoosed = "female";
-//     }
-//     if (mascClick == 1) {
-//         genderChoosed = "male";
-//     } 
-//     if (genderChoosed = response.gender) {
-//         score += 1;
-//     }
-//     if (genderChoosed != response.gender) {
-//         score -= 1;
-//     }
-//     gameOver(score);   
-//     return score;
-// }
+function newScore(score){
+    var genderChoosed;
+    if (femClick() == 1) {
+        genderChoosed = "female";
+    }
+    if (mascClick() == 1) {
+        genderChoosed = "male";
+    } 
+    if (genderChoosed = response.gender) {
+        score += 1;
+    }
+    if (genderChoosed != response.gender) {
+        score -= 1;
+    }
+    gameOver(score);   
+    return score;
+}
 
 getName();
 

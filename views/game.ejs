@@ -19,13 +19,18 @@
     }
   </script>
 </head>
+<header>
+  <img src=girl.png" alt="girl sign">
+  <p>Guess The Gender</p>
+  <img src="../public/boy.png" alt="boy sign">
+</header>
   <body>
     <div id="game">
       <p id="score">Score : <%= score %> </p>
       <div id="buttons">
-        <button id="left" onclick="femClick()" name="f" value="fem">GIRL</button>
+        <button id="left" onclick="femClick()" name="f" value="fem">Feminin</button>
         <p id="name"><%= rows[0].name %></p>
-        <button onclick="mascClick()" name="m" value="masc">BOY</button>
+        <button onclick="mascClick()" name="m" value="masc">Masculin</button>
       </div>
       
     </div>

@@ -7,7 +7,11 @@ var con = mysql.createConnection({
     database: "GuessTheGender"
 });
 
-var sql = "SELECT name FROM Names ORDER BY RAND() LIMIT 1";
-  con.query(sql, function (err,rows) {
-    if (err) throw err;
+con.connect();
+
+con.query('SELECT name FROM Names ORDER BY RAND() LIMIT 1', function(err, rows, fields) {
+  if (err) throw err;
+  console.log( rows[0].name);
 });
+
+con.end();

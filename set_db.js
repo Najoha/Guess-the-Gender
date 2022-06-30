@@ -41,3 +41,5 @@ function(err, names) {
         }
     });
 });
+
+con.end();

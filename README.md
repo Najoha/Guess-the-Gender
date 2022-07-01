@@ -8,7 +8,11 @@ J'aimerais les importer dans le fichier game.js afin de les utilisées pour comp
 
 J'ai également déjà essayé de les definir directement dans le fichier game.js et de les utiliser par la suite dans le fichier game.ejs mais je n'y suis pas parvenue.
 
+
+
 !!!!! MISE A JOUR : j'ai continuer mes test et mon soucis c'est récuperer une réponse sensée être envoyée par les boutons pour ensuite comparer avec ce que l'API me donne. !!!!!
+
+
 
 
 commandes à effectuer dans le terminal poure installer les bons outils:

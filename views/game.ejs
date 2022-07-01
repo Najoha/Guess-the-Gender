@@ -5,13 +5,10 @@
     <title>Guess the gender</title>
     <%- include('./css/style'); %>
     <%- include('./js/rules'); %>
-    <%- include('./js/buttons'); %> 
-    
+    <%- include('./js/buttons'); %>   
 </head>
 <header>
-  <img src=girl.png" alt="girl sign">
   <p>Guess The Gender</p>
-  <img src="../public/boy.png" alt="boy sign">
 </header>
   <body>
     <div id="game">
@@ -20,9 +17,9 @@
         <input id="pop" onclick="displayRules()" type="button" value="Comment Jouer?"> 
       </div>        
       <div id="buttons">
-        <button id="left" onclick="femClick()" name="f" value="fem">Feminin</button>
+        <button id="left" onclick="femClick()" value="fem">Feminin</button>
         <p id="name"><%= rows[0].name %></p>
-        <button onclick="mascClick()" name="m" value="masc">Masculin</button>
+        <button onclick="mascClick()" value="masc">Masculin</button>
       </div>
     </div>
     <footer>

@@ -5,8 +5,5 @@
     "gender-api.com-client": "^1.0.14",
     "mysql": "^2.18.1",
     "npm": "^8.13.1"
-  },
-  {
-    "type": "module"
-  }
+  }  
 }

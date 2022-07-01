@@ -5,8 +5,9 @@ const app = express();
 const createError = require("http-errors");
 const router = express.Router();
 const GenderApi = require('gender-api.com-client');
-const axios = require('axios');
-const genderApi = "xgVbzQndH78QCLGW2ppnTsFqd9rwPBGBuaYt"
+const genderApi = "pcb3Z5nVw5ehBHgN9QgLmwH2tE4TnE9mn6Kx"
+const axios = require("axios")
+const cors = require('cors'); 
 
 //const genderApiClient = new GenderApi.Client('xgVbzQndH78QCLGW2ppnTsFqd9rwPBGBuaYt');
 const con = mysql.createConnection({
@@ -17,6 +18,7 @@ const con = mysql.createConnection({
 });
 
 
+
 con.connect();
 /**
  * Listen on provided port, on all network interfaces.
@@ -25,8 +27,10 @@ con.connect();
 server.listen(3000); */
 
 const gameController = (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
     try {
         const data = game();
+        res.header("Access-Control-Allow-Origin", "*");
         return res.send(data).status(200);
     } catch (error) {
         throw error;
@@ -81,7 +85,7 @@ const game = () => {
 
 
 // bad practice but sql is so bad I can't stand => refacto with MongoDB
-
+getRandomPerson()
 
 http.createServer(app).listen(
     process.env.PORT || 5000);
@@ -101,13 +105,11 @@ app.use(function (err, req, res, next) {
     res.json(err);
 })
 
-// function gameOver(score){
-//     if (score == 20){
-//         return 1;
-//     }
-//     if (score == 0){
-//         return 0;
-//     }
-// }
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"),
+    next()
+})
+
+app.use(cors());
 
 

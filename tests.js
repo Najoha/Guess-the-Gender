@@ -1,17 +1,20 @@
-var mysql = require('mysql');
+const express = require('express')
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "GuessTheGender"
+const app = express();
+const port = 5555;
+
+let books = [];
+
+app.use(cors());
+
+// Configuring body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.post('/book', (req, res) => {
+    // We will be coding here
 });
 
-con.connect();
-
-con.query('SELECT name FROM Names ORDER BY RAND() LIMIT 1', function(err, rows, fields) {
-  if (err) throw err;
-  console.log( rows[0].name);
-});
-
-con.end();
+app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));

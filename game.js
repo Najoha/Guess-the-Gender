@@ -1,6 +1,3 @@
-// import { femClick } from './views/game.ejs';
-// import { mascClick } from './views/game.ejs';
-
 var mysql = require('mysql');
 const express = require('express');
 const { response } = require('express');
@@ -18,7 +15,7 @@ var score = 10;
 
 con.connect();
 
-function getName(){
+function game(){
     con.query('SELECT name FROM Names ORDER BY RAND() LIMIT 1', function(err, rows) {
     if (err) throw err;
 
@@ -61,9 +58,6 @@ function getName(){
     return response;
 }
 
-
-
-
 // function gameOver(score){
 //     if (score == 20){
 //         return 1;
@@ -80,25 +74,9 @@ function getName(){
 //     console.log("prout");
 // }
 
-// function newScore(score){
-//     var genderChoosed;
-//     if (femClick() == 1) {
-//         genderChoosed = "female";
-//     }
-//     if (mascClick() == 1) {
-//         genderChoosed = "male";
-//     }
-//     if (genderChoosed = response.gender) {
-//         score += 1;
-//     }
-//     if (genderChoosed != response.gender) {
-//         score -= 1;
-//     }
-//     gameOver(score);
-//     return score;
-// }
 
-getName();
+
+game();
 
 con.end();
 

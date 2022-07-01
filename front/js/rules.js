@@ -1,8 +1,8 @@
 
-function displayRules(){
+const displayRules = () =>{
       document.getElementById('rules').style.display = 'block';
     }
 
-function hideRules(){
+const hideRules = () => {
     document.getElementById('rules').style.display = 'none';
 }

@@ -6,6 +6,38 @@ body{
 
 }
 
+#game{
+    display: block;
+}
+
+#loose{
+    display: none;
+    width: 100%;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#tryAgain{    
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: 38%;
+    width: 24%;    
+}
+
+#win{
+    display: none;
+    width: 100%;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#again{
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: 38%;
+    width: 24%;
+}
+
 header{
     background-color: black;
     padding: 15px;

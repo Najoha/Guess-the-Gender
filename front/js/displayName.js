@@ -55,11 +55,60 @@ const checkGender = (choosedGender) => {
     else {
         choosedGender === currentData.genderData.gender ? score++ : score--
     }
+    endGame(score)
 
     document.getElementById("score").innerHTML = "Score : " + score;
+}
+
+const endGame = (score) => {
+    if(score === 20){
+        const divToHide = document.getElementById("game");
+        divToHide.style.display = "none";
+        const divToDisplay = document.getElementById("win");
+        divToDisplay.style.display = "block";
+        const btnToDisplay = document.getElementById("again");
+        btnToDisplay.style.display = "block";
+    }
+    if(score === 0){
+        const divToHide = document.getElementById("game");
+        divToHide.style.display = "none";
+        const divToDisplay = document.getElementById("loose");
+        divToDisplay.style.display = "block";
+        const btnToDisplay = document.getElementById("tryAgain");
+        btnToDisplay.style.display = "block";
+    }
+}
+
+const newGame = () => {
+    const btn = document.getElementById("again");
+    btn.addEventListener('click', () => {        
+        const div = document.getElementById("name");
+        div.innerHTML = "No name";
+        document.getElementById("score").innerHTML = "Score : 10";
+        const divToDisplay = document.getElementById("game");
+        divToDisplay.style.display = "block";
+        const divToHide = document.getElementById("win");
+        divToHide.style.display = "none";
+        const btnToHide = document.getElementById("again");
+        btnToHide.style.display = "none";
+    })
+
+    const btnloose = document.getElementById("tryAgain");
+    btnloose.addEventListener('click', () => {
+        const div = document.getElementById("name");
+        div.innerHTML = "No name";
+        document.getElementById("score").innerHTML = "Score : 10";
+        const divToDisplay = document.getElementById("game");
+        divToDisplay.style.display = "block";
+        const divToHide = document.getElementById("loose");
+        divToHide.style.display = "none";
+        const btnToHide = document.getElementById("tryAgain");
+        btnToHide.style.display = "none";
+    })
 }
 
 getData();
 displayName();
 fem();
 masc();
+newGame();

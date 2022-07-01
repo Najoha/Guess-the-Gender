@@ -17,6 +17,14 @@
       console.log("vous avez choisis Feminin");
       return 1;
     }
+
+    function displayRules(){
+      document.getElementById('rules').style.display = 'block';
+    }
+
+    function hideRules(){
+      document.getElementById('rules').style.display = 'none';
+    }
   </script>
 </head>
 <header>
@@ -26,14 +34,26 @@
 </header>
   <body>
     <div id="game">
-      <p id="score">Score : <%= score %> </p>
+      <div id="infGame">
+        <p id="score">Score : <%= score %> </p>
+        <input id="pop" onclick="displayRules()" type="button" value="Comment Jouer?"> 
+      </div>        
       <div id="buttons">
         <button id="left" onclick="femClick()" name="f" value="fem">Feminin</button>
         <p id="name"><%= rows[0].name %></p>
         <button onclick="mascClick()" name="m" value="masc">Masculin</button>
       </div>
-      
     </div>
+    <footer>
+      <div id="rules"> 
+        <input id="sup" type="button" onclick="hideRules()" value="X">
+        <p id="text">
+          <u>But du jeux :</u> Deviner quel est le genre auquel le prénom est le plus souvent attribué <br><br>
+          <u>Fin de partie:</u> Le joueur gagne lorsque son score atteint 20. Cependant si il descend à 0, la partie est perdue. <br><br>
+          <u>Comment jouer :</u> Le prénom s'affiche au centre de la page, au milieu des deux boutons. Pour indiquer votre choix cliquez sur l'un des deux boutons Orange.
+        </p>
+      </div>
+    </footer>
   <script type="text/javascript"></script>
 </body>
 </html

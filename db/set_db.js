@@ -32,6 +32,7 @@ function(err, names) {
     } 
 
     con.connect(function(err) {
+        console.log("Connected!");
         if (err) throw err;
         var sql = "INSERT INTO Names (name) VALUES (?)";
         for (var i = 0; i < 299; i++){

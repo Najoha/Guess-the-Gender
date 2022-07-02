@@ -79,7 +79,7 @@ Ainsi vous avez lancé le programme permettant de faire les requêtes. Pour voir
 curl http://localhost:5000/game
 ```
 
-Une fois tout cela fait, allez dans `front/index.html` ouvrez la page html dans votre navigateur et jouez.
+Une fois tout ça fait, allez dans `front/index.html` ouvrez la page html dans votre navigateur et jouez.
 
 
 ## Fonctionnement du programme 
@@ -92,6 +92,42 @@ J'ai décidé de mettre les noms dans un `fichier.json` car parser ce fichier é
 
 > Je pourrais probablement améliorer ce coté là en créant un fichier qui jouer le role de `create_db.js` et de `set_db.js` en même temps.
 
-**Coté Back**
+**Coté Back :**
+
+Tout le Back est réunis dans un unique fichier : `index.js`.
+
+On se connecte à nouveau à la base de données pour y selectionner un prénom au hasard et envoyer la requête à l'API  grâce à deux fonctions: 
+
+- `checkGender(prenom, country);` -> appelle l'API en utilisant axios on récupère la réponse et on la retourne.
+
+- `getRandomPerson();` -> envoie la requête SQL, utilise la fonction précédente et lui passe comme paramètres le résultat de la requête SQL et "FR".
+
+> Notes: l'API propose deux fonction pour verifier le genre d'un prénom. Une qui ne prend comme paramètre que le prénom et celle que j'utilise qui prend également le pays. J'ai choisis la seconde pour prévoir une version du jeux dans un autre language car les prénoms peuvent ne pas avoir le même genre d'un pays à l'autre.
+
+Pour utiliser la fonction ci dessus, on l'appelle dans `game()` qui essaye d'executer la fonction et si il y à une erreur, `game()` renvoie l'erreur qui correspond. Cette fonction est elle même appelée dans `gameController()` ce controller vas essayer d'executer la fonction et renvoyer status = 200 si il y parvient. Sinon il renvoie l'erreur associée au problème rencontré.
+
+A la fin du fichier, on retrouve une dizaine de ligne permettant de créer un server sur un port définit, d'appeler `gameController()` dans une route "/game" et de donner un status aux erreurs si il y en a.
+
+> Notes: Je pourrais surement mieux organiser ce fichier.
+
+**Coté Front**
+
+Tous le Front est regroupé dans le dossier Front qui contient les dossiers: css, images, js ; ainsi que le fichier `index.html`.
+
+Dans le dossier : js, game.js permet tous le fonctionnement du jeux sauf la gestion de l'affichage des règle du jeux.
+
+`game.js` contient des fonctions permettant :
+
+- la récupération du prénom selectionné dans le back -> `getData()`,
+- l'affichage du prénom récupéré plus tôt -> `displayName()`,
+- l'indication du bouton sur lequel le joueur à choisis de cliquer et ce que ça signifie  -> `fem()` et `masc()`,
+- le fait "d'obliger" le joueur à appuyer sur le bouton nouveau prénom pour continuer le jeux -> `nextName()`,
+- la comparaison du choix du joueur et du genre renvoyé dans le .json par l'API -> `checkGender()`,
+- la fin du jeux et l'affichage des éléments de fin -> `endGame()`,
+- le lancement de la partie suivante -> `newGame`.
+
+> Notes: Les fonctions de fin sont rédigées d'une façon qui, je pense, peut être moins longue et plus efficace.
+> Un système de changement de language du jeux peut être mis en place.
+> On peut également mettre en place un système de sauvegarde des données, de comptage de fautes et de bonnes réponses qui permettrais de faire un classement en fonction du taux de bonnes réponses que le joueur obtient au cours de ses parties.
 
 

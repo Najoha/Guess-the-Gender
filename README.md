@@ -2,7 +2,7 @@
 Jeux ayant pour but de deviner le genre des noms affichés à l'écran. A 20 points le joueur gagne, à 0 il perd. Il commence à 10.
 
 
-AU SECOURS
+Temps mis pour réaliser cette version du projet : environ 15h.
 
 
 commandes à effectuer dans le terminal poure installer les bons outils:

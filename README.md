@@ -1,9 +1,6 @@
 ## Guess-the-Gender
 Jeux ayant pour but de deviner le genre des noms affichés à l'écran. A 20 points le joueur gagne, à 0 il perd. Il commence à 10.
 
-
-Temps mis pour réaliser cette version du projet : environ 15h.
-
 ## Utilisation de l'API 
 
 Avant tout vous devez vous rendre sur le site [https://gender-api.com/fr]
@@ -110,7 +107,7 @@ A la fin du fichier, on retrouve une dizaine de ligne permettant de créer un se
 
 > Notes: Je pourrais surement mieux organiser ce fichier.
 
-**Coté Front**
+**Coté Front :**
 
 Tous le Front est regroupé dans le dossier Front qui contient les dossiers: css, images, js ; ainsi que le fichier `index.html`.
 
@@ -130,4 +127,4 @@ Dans le dossier : js, game.js permet tous le fonctionnement du jeux sauf la gest
 > Un système de changement de language du jeux peut être mis en place.
 > On peut également mettre en place un système de sauvegarde des données, de comptage de fautes et de bonnes réponses qui permettrais de faire un classement en fonction du taux de bonnes réponses que le joueur obtient au cours de ses parties.
 
-
+Temps mis pour réaliser cette version du projet : environ 15h.

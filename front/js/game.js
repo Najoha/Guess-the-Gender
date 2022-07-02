@@ -1,6 +1,6 @@
 const currentData = {}
 
-let score = 19;
+let score = 10;
 let genderChoosed;
 const div = document.getElementById("name");
 div.innerHTML = "No name";

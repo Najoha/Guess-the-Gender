@@ -42,6 +42,11 @@ Effectuez les commandes suivantes dans votre terminal pour avoir tous les packag
 ```
 sudo npm install mysql
 sudo npm install file-system --save
+sudo npm install axios
+sudo npm install express --save
+sudo npm i nodemon
+sudo npm i http
+sudo npm install cors
 ```
 
 ## Créer la base de donnée et la remplir
@@ -79,5 +84,14 @@ Une fois tout cela fait, allez dans `front/index.html` ouvrez la page html dans 
 
 ## Fonctionnement du programme 
 
+**Coté base de données :**
+
+Pour la création et le remplissage de la base de données respectivement, les fichiers se connectent à MySQL, une fois fait, ils console.log "Connected!" puis un message correspondant à l'action attendu du fichier.
+
+J'ai décidé de mettre les noms dans un `fichier.json` car parser ce fichier était plus propre dans le code que de tout écrire nom par nom dans le fichier `set_db.js`.
+
+> Je pourrais probablement améliorer ce coté là en créant un fichier qui jouer le role de `create_db.js` et de `set_db.js` en même temps.
+
+**Coté Back**
 
 

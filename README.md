@@ -33,5 +33,28 @@ C'est à cette ligne que vous mettez votre token à la place de `your_token`
 ```
 Des lignes 12 à 17 vous devez remplacer les élément en fonction de vos identifiants MySQL et du nom que vous voulez donner à votre base de données.
 
+Vous devrez remplacer les mêmes informations dans `db/create_db.js` l 3 à 7 ainsi que dans `db/set_db.js` l 4 à 9.
+
+##Installation des packages
+
+Effectuez les commandes suivantes dans votre terminal pour avoir tous les packages necessaires au bon fonctionnement du jeu:
+
+```
+sudo npm install mysql
+```
+
+## Créer la base de donnée et la remplir
+
+Une fois que vous avez effectué les changements ci dessus, copier une par une et dans l'ordre les commandes suivantes dans votre terminal:
+
+Faites un `CTRL + C` après chaque commande lorsque les messages :'database created' et 'Table created, 300 names have been added in it' se sont affichés.
+```
+node db/create_db.js
+```
 
 
+```
+node db/set_db.js
+```
+
+Après ça votre base de données sera créée et remplis avec la table Names contenant 300 noms présents dans `db/names.json`.

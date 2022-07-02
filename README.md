@@ -41,6 +41,7 @@ Effectuez les commandes suivantes dans votre terminal pour avoir tous les packag
 
 ```
 sudo npm install mysql
+sudo npm install file-system --save
 ```
 
 ## Créer la base de donnée et la remplir
@@ -58,3 +59,25 @@ node db/set_db.js
 ```
 
 Après ça votre base de données sera créée et remplis avec la table Names contenant 300 noms présents dans `db/names.json`.
+
+## Requêtes à l'API
+
+Ecrivez dans votre terminal : 
+
+```
+npm run start
+```
+
+Ainsi vous avez lancé le programme permettant de faire les requêtes. Pour voir la réponse obtenue allez dans votre navigateur et ecrivez la commande suivante dans votre termianl : 
+
+```
+curl http://localhost:5000/game
+```
+
+Une fois tout cela fait, allez dans `front/index.html` ouvrez la page html dans votre navigateur et jouez.
+
+
+## Fonctionnement du programme 
+
+
+

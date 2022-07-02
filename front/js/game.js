@@ -1,6 +1,6 @@
 const currentData = {}
 
-let score = 10;
+let score = 19;
 let genderChoosed;
 const div = document.getElementById("name");
 div.innerHTML = "No name";
@@ -68,6 +68,7 @@ const endGame = (score) => {
         divToDisplay.style.display = "block";
         const btnToDisplay = document.getElementById("again");
         btnToDisplay.style.display = "block";
+        
     }
     if(score === 0){
         const divToHide = document.getElementById("game");
@@ -76,15 +77,21 @@ const endGame = (score) => {
         divToDisplay.style.display = "block";
         const btnToDisplay = document.getElementById("tryAgain");
         btnToDisplay.style.display = "block";
+        
     }
+    
 }
 
+
+
 const newGame = () => {
+    
     const btn = document.getElementById("again");
-    btn.addEventListener('click', () => {        
+    btn.addEventListener('click', () => {      
+        score = 10;  
         const div = document.getElementById("name");
         div.innerHTML = "No name";
-        document.getElementById("score").innerHTML = "Score : 10";
+        document.getElementById("score").innerHTML = "Score : "+ score;
         const divToDisplay = document.getElementById("game");
         divToDisplay.style.display = "block";
         const divToHide = document.getElementById("win");
@@ -95,9 +102,10 @@ const newGame = () => {
 
     const btnloose = document.getElementById("tryAgain");
     btnloose.addEventListener('click', () => {
+        score = 10;
         const div = document.getElementById("name");
         div.innerHTML = "No name";
-        document.getElementById("score").innerHTML = "Score : 10";
+        document.getElementById("score").innerHTML = "Score : "+ score;
         const divToDisplay = document.getElementById("game");
         divToDisplay.style.display = "block";
         const divToHide = document.getElementById("loose");
@@ -105,6 +113,7 @@ const newGame = () => {
         const btnToHide = document.getElementById("tryAgain");
         btnToHide.style.display = "none";
     })
+    
 }
 
 getData();

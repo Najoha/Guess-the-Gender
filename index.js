@@ -5,19 +5,16 @@ const app = express();
 const createError = require("http-errors");
 const router = express.Router();
 const GenderApi = require('gender-api.com-client');
-const genderApi = "F29stM5rvwP5dRFY9mNctgxex35E9zUVFkuk"
+const genderApi = "F29stM5rvwP5dRFY9mNctgxex35E9zUVFkuk";
 const axios = require("axios")
 const cors = require('cors'); 
 
-//const genderApiClient = new GenderApi.Client('xgVbzQndH78QCLGW2ppnTsFqd9rwPBGBuaYt');
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "root",
     database: "GuessTheGender"
 });
-
-
 
 con.connect();
 /**
@@ -83,8 +80,6 @@ const game = () => {
     }
 }
 
-
-// bad practice but sql is so bad I can't stand => refacto with MongoDB
 getRandomPerson()
 
 http.createServer(app).listen(
@@ -93,10 +88,6 @@ http.createServer(app).listen(
 router.get("/game", gameController);
 
 app.use("/", router);
-
-/* app.use(function (err, req, res, next) {
-    next(createError(404));
-}) */
 
 app.use(function (err, req, res, next) {
     res.locals.message = err.message;

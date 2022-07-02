@@ -21,7 +21,7 @@ var con = mysql.createConnection({
     database: "GuessTheGender"
 });
  
-fs.readFile('names.json',
+fs.readFile('db/names.json',
 function(err, names) {
     var values = [];     
     var jsonData = names;
@@ -41,5 +41,3 @@ function(err, names) {
         }
     });
 });
-
-con.end();
